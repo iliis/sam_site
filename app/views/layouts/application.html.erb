@@ -15,15 +15,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="main">
-      <div id="header">
-        <h1>Hallo Welt</h1>
-        <hr>
-        <%= render 'shared/main_menu' %>
-        <hr>
-      </div>
+	  <div id="main">
+		  <div id="header">
+			  <% if authenticated? %>
+				  <%= link_to "logout", :controller=>:admin, :action=>:logout %>
+				  <h1>Hallo Sam</h1>
+			  <% else %>
+				  <h1>Hallo Welt</h1>
+			  <% end %>
+			  <hr>
+			  <%= render 'shared/main_menu' %>
+			  <hr>
+		  </div>
 
-      <%= yield %>
-    </div>
+		  <%= yield %>
+	  </div>
   </body>
 </html>

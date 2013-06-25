@@ -1,4 +1,7 @@
 Sam::Application.routes.draw do
+  get "login" => "admin#login"
+  get "logout" => "admin#logout"
+
   get "home"  => "home#index"
   get "about" => "about#index"
 

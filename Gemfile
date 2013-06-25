@@ -42,3 +42,5 @@ end
 # gem 'debugger'
 
 gem 'minitest'
+
+gem 'redcarpet'

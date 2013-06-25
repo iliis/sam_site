@@ -12,6 +12,6 @@
     <h3><%= proj.title %></h3>
     <small>started: <i><%= proj.created_at %></i>, last update: <i><%= proj.updated_at %></i>, current status: <i>active</i></small>
     <hr>
-    <%= proj.description %>
+    <%= markdown(proj.description) %>
   <% end %>
 </div>

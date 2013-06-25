@@ -1,11 +1,11 @@
-<% entries = {"home" => "home", "projects" => "projects", "about me" => "about"} %>
+<% entries = {"news" => "home", "projects" => "projects", "about me" => "about"} %>
 
 //
 <% entries.each do |text, dest| %>
   <% if current_page?(url_for(:controller => dest)) %>
-    <b><%= text %></b>
+    <b><%= text.upcase %></b>
   <% else %>
-    <%= link_to text, dest %>
+    <%= link_to text.upcase, dest %>
   <% end %>
   //
 <% end %>

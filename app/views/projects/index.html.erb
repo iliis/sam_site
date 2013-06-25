@@ -6,6 +6,9 @@
   <h2>PROJECTS</h2>
   Various things I made. A constant work in progress.
   <br>
+  <% if authenticated? %>
+	  <%= link_to "create new project", new_project_path %><br>
+  <% end %>
   <br>
 
   <% @projects.each do | proj | %>

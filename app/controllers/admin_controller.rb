@@ -1,8 +1,11 @@
 class AdminController < ApplicationController
-  http_basic_authenticate_with :name => "user", :password => "password"
 
   def login
-    start_session
+    if authenticate_with_http_basic { | user, password | user == ADMIN_CREDENTIALS["username"] && password == ADMIN_CREDENTIALS["password"] }
+      start_session
+    else
+      request_http_basic_authentication
+    end
   end
 
   def logout

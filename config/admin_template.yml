@@ -1,0 +1,14 @@
+# rename this file to admin.yml and change username & password
+
+defaults: &DEFAULT
+    username: user
+    password: pass
+
+development:
+    <<: *DEFAULT
+
+test:
+    <<: *DEFAULT
+
+production:
+    <<: *DEFAULT

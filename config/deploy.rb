@@ -29,8 +29,8 @@ namespace :deploy do
   end
   desc "symlinks sensitive config files"
   task :symlink_private, :roles => :app do
-    run "ln -fs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
-    run "ln -fs #{deploy_to}/shared/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
-    run "ln -fs #{deploy_to}/shared/config/admin.yml #{release_path}/config/admin.yml"
+    run "ln -s #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+    run "ln -s #{deploy_to}/shared/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
+    run "ln -s #{deploy_to}/shared/config/admin.yml #{release_path}/config/admin.yml"
   end
 end

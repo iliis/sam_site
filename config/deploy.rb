@@ -1,3 +1,7 @@
+set :rvm_type, :system
+set :rvm_path, "/usr/local/rvm"
+require "rvm/capistrano"
+
 set :application, "sam"
 
 set :repository,  "git@github.com:iliis/sam_site.git"

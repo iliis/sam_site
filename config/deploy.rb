@@ -2,6 +2,8 @@ set :rvm_type, :system
 set :rvm_path, "/usr/local/rvm"
 require "rvm/capistrano"
 
+require "bundler/capistrano"
+
 set :application, "sam"
 
 set :repository,  "git@github.com:iliis/sam_site.git"
@@ -29,5 +31,6 @@ namespace :deploy do
   task :symlink_private, :roles => :app do
     run "ln -fs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
     run "ln -fs #{deploy_to}/shared/config/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
+    run "ln -fs #{deploy_to}/shared/config/admin.yml #{release_path}/config/admin.yml"
   end
 end

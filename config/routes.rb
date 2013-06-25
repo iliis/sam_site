@@ -1,4 +1,7 @@
 Sam::Application.routes.draw do
+  get "home"  => "home#index"
+  get "about" => "about#index"
+
   root :to => "home#index"
   #get "home/index"
 

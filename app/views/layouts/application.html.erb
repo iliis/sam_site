@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Sam</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>sam's site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="sam">
+    <title>Sam</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <h1>Hallo Welt</h1>
+        <hr>
+        <%= render 'shared/main_menu' %>
+        <hr>
+      </div>
 
-<%= yield %>
-
-</body>
+      <%= yield %>
+    </div>
+  </body>
 </html>

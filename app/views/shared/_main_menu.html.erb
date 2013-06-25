@@ -1,0 +1,11 @@
+<% entries = {"home" => "home", "about me" => "about"} %>
+
+//
+<% entries.each do |text, dest| %>
+  <% if current_page?(url_for(:controller => dest)) %>
+    <b><%= text %></b>
+  <% else %>
+    <%= link_to text, dest %>
+  <% end %>
+  //
+<% end %>

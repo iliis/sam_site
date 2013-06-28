@@ -1,6 +1,12 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticated?, :except => [:index, :show]
+
   def index
     @projects = Project.all
+  end
+
+  def show
+    @project = Project.find(params[:id])
   end
 
   def new
@@ -11,7 +17,22 @@ class ProjectsController < ApplicationController
     @project = Project.new(params[:project])
 
     if @project.save
-      redirect_to :action => :index
+      redirect_to @project
+    else
+      render :action => :new
+    end
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+    render :action => :new
+  end
+
+  def update
+    @project = Project.find(params[:id])
+
+    if @project.update_attributes(params[:project])
+      redirect_to @project
     else
       render :action => :new
     end

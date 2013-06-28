@@ -1,0 +1,5 @@
+<h2><%= @project.title %></h2>
+<small>state: <i><%= @project.state %></i></small><br>
+<%= link_to "edit", edit_project_path(@project) if authenticated? %>
+
+<%= markdown(@project.description) %>

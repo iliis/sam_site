@@ -1,20 +1,12 @@
-<div id="content_left">
+<!--<div id="content_left">
   <%= image_tag "mkbot.jpg" %>
 </div>
 
-<div id="content">
+<div id="content">-->
   <h2>PROJECTS</h2>
-  Various things I made. A constant work in progress.
-  <br>
   <% if authenticated? %>
 	  <%= link_to "create new project", new_project_path %><br>
   <% end %>
-  <br>
 
-  <% @projects.each do | proj | %>
-    <h3><%= proj.title %></h3>
-    <small>started: <i><%= proj.created_at %></i>, last update: <i><%= proj.updated_at %></i>, current status: <i>active</i></small>
-    <hr>
-    <%= markdown(proj.description) %>
-  <% end %>
-</div>
+  <%= render :partial => "project_preview", :collection => @projects, :as => "proj" %>
+  <!--</div>-->

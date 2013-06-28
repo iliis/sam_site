@@ -1,0 +1,17 @@
+<div class="project_preview">
+
+  <% if proj.preview? %>
+    <%= link_to(image_tag(proj.preview.url), project_path(proj)) %>
+  <% else %>
+    <div style="background-color: #555; width: 210px; height: 210px; margin: 0px;">image missing</div>
+  <% end %>
+
+  <div class="project_preview_text">
+    <h3><%= link_to proj.title, project_path(proj) %></h3>
+    <%= markdown(proj.short_desc) %>
+  </div>
+
+  <% if authenticated? %>
+    <%= link_to "edit", edit_project_path(proj) %>
+  <% end %>
+</div>

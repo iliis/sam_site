@@ -5,7 +5,7 @@
   <% if current_page?(url_for(:controller => dest)) %>
     <b><%= text.upcase %></b>
   <% else %>
-    <%= link_to text.upcase, dest %>
+    <%= link_to text.upcase, url_for(:controller => dest) %>
   <% end %>
   //
 <% end %>

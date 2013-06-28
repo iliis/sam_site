@@ -1,8 +1,21 @@
-<h2>create new project</h2>
+<h2>new/edit project</h2>
 
 <%= form_for @project do |f| %>
 	<%= f.label :title, "title:" %>
-	<%= f.text_field :title %><br>
+    <%= f.text_field :title %>
+    <br>
+
+    <%= f.label :state, "state: "%>
+    <%= f.select :state, options_for_select(Project.all_states, "active") %>
+    <br>
+
+    <%= f.label :preview, "preview image (210x210px):" %>
+    <%= f.file_field :preview %>
+    <br>
+
+    <%= f.label :short_desc, "short description:" %><br>
+    <%= f.text_area :short_desc, :style => "height: 100px;" %>
+    <br>
 
 	<%= f.text_area :description %>
 	<br>

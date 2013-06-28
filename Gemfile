@@ -43,4 +43,8 @@ end
 
 gem 'minitest'
 
+# renders markdown
 gem 'redcarpet'
+
+# for managing files (especially images)
+gem 'paperclip'

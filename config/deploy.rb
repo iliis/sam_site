@@ -21,6 +21,8 @@ role :db,  "klamath.ch", :primary => true # This is where Rails migrations will 
 # after "deploy:restart", "deploy:cleanup"
 
 after 'deploy:update_code', 'deploy:symlink_private'
+after 'deploy', 'deploy:migrate'
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end

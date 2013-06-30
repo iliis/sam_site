@@ -1,0 +1,14 @@
+<% if defined?(show_project_tag) %>
+	<h3><a href="<%= project_url(post.project) %>" >[<%= post.project.title %>] <%= post.title %></a></h3>
+<% else %>
+	<h3><%= post.title %></h3>
+<% end %>
+
+<small>posted at: <i><%= post.created_at %></i>
+	<% if post.created_at != post.updated_at %>
+		- last update: <i><%= post.updated_at %></i>
+	<% end %>
+	<%= link_to "edit", edit_project_post_path(post.project, post) if authenticated? %>
+</small>
+
+<%= markdown(post.content) %>

@@ -11,6 +11,8 @@ Sam::Application.routes.draw do
     resources :posts
   end
 
+  resources :images
+
   #get "home/index"
 
   # The priority is based upon order of creation:

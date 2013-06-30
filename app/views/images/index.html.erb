@@ -1,0 +1,8 @@
+<h2>IMAGES</h2>
+<%= link_to "upload image", new_image_path() %><hr>
+
+<% @images.each do |image| %>
+	<div class="small_img">
+		<%= link_to(image_tag(image.file.url(:small_thumb)), edit_image_path(image)) %>
+	</div>
+<% end %>

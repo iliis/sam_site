@@ -105,3 +105,15 @@ input:focus, textarea:focus {
   box-shadow: 0 0 8px rgba(0,0,0,0.4);
   background-color: #fff;
 }
+
+/* ------ IMAGES ------ */
+.small_img {
+	float: left;
+	margin: 2px;
+	width: 100px;
+	height: 100px;
+}
+
+.small_img img:hover {
+	box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}

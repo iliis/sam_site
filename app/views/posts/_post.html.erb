@@ -1,3 +1,4 @@
+<div class="post">
 <% if defined?(show_project_tag) %>
 	<h3><a href="<%= project_url(post.project) %>" >[<%= post.project.title %>] <%= post.title %></a></h3>
 <% else %>
@@ -12,3 +13,4 @@
 </small>
 
 <%= markdown(post.content) %>
+</div>

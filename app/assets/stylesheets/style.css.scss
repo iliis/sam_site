@@ -7,7 +7,7 @@ body {
 
 #main {
   margin: auto auto;
-  width: 890px;
+  width: 700px;
 }
 
 #header {
@@ -27,7 +27,7 @@ body {
 }
 
 #content {
-  width: 600px;
+  width: 410px;
   height: 585px;
   position: relative;
   left: 270px;
@@ -85,6 +85,10 @@ small {
   font-size: 10pt;
 }
 
+.project, .post {
+  text-align: justify;
+}
+
 
 /* ----- FORMS ------ */
 input, textarea {
@@ -110,7 +114,6 @@ input:focus, textarea:focus {
 .small_img {
 	float: left;
 	margin: 2px;
-	width: 100px;
 	height: 100px;
 }
 
@@ -118,8 +121,17 @@ input:focus, textarea:focus {
 	box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
-.post img {
+.post_image, .post_image_left {
+	float: left;
+	position: relative;
+    margin-right: 15px;
+	margin-left: -60px;
+}
+
+.post_image_right {
 	float: right;
 	position: relative;
-	right: -150px;
+    margin-left: 15px;
+	margin-right: -60px;
 }
+

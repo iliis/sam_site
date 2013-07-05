@@ -1,8 +1,10 @@
-<h2><%= @project.title %></h2>
-<small>state: <i><%= @project.state %></i></small><br>
-<%= link_to "edit", edit_project_path(@project) if authenticated? %>
-<%= link_to "add post", new_project_post_path(@project) if authenticated? %>
+<div class="project">
+  <h2><%= @project.title %></h2>
+  <small>state: <i><%= @project.state %></i></small><br>
+  <%= link_to "edit", edit_project_path(@project) if authenticated? %>
+  <%= link_to "add post", new_project_post_path(@project) if authenticated? %>
 
-<%= markdown(@project.description) %>
+  <%= markdown(@project.description) %>
 
-<%= render @project.posts.order("created_at ASC") %>
+  <%= render @project.posts.order("created_at ASC") %>
+</div>

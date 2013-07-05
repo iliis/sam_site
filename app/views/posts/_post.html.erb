@@ -10,6 +10,7 @@
 		- last update: <i><%= post.updated_at %></i>
 	<% end %>
 	<%= link_to "edit", edit_project_post_path(post.project, post) if authenticated? %>
+    <% if ! post.visible? %><b>hidden</b><% end %>
 </small>
 
 <%= markdown(post.content) %>

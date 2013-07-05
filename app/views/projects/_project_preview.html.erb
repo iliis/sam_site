@@ -8,10 +8,12 @@
 
   <div class="project_preview_text">
     <h3><%= link_to proj.title, project_path(proj) %></h3>
+
+    <% if authenticated? %>
+      <%= link_to "edit", edit_project_path(proj) %>
+      <% if ! proj.visible? %><b>hidden</b><% end %>
+    <% end %>
+
     <%= markdown(proj.short_desc) %>
   </div>
-
-  <% if authenticated? %>
-    <%= link_to "edit", edit_project_path(proj) %>
-  <% end %>
 </div>

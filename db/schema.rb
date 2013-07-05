@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130630163935) do
+ActiveRecord::Schema.define(:version => 20130705150910) do
 
   create_table "images", :force => true do |t|
     t.text     "description"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130630163935) do
     t.integer  "project_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "visible"
   end
 
   add_index "posts", ["project_id"], :name => "index_posts_on_project_id"
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130630163935) do
     t.integer  "preview_file_size"
     t.datetime "preview_updated_at"
     t.string   "state"
+    t.boolean  "visible"
   end
 
 end

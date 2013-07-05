@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.order("created_at DESC")
+    if authenticated?
+      @posts = Post.order("created_at DESC")
+    else
+      @posts = Post.where(:visible => true).order("created_at DESC")
+    end
   end
 end

@@ -2,7 +2,11 @@ class ProjectsController < ApplicationController
   before_filter :authenticated?, :except => [:index, :show]
 
   def index
-    @projects = Project.all
+    if authenticated?
+      @projects = Project.all
+    else
+      @projects = Project.where(:visible => true)
+    end
   end
 
   def show

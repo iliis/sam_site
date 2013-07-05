@@ -9,6 +9,10 @@
     <%= f.select :state, options_for_select(Project.all_states, "active") %>
     <br>
 
+    <%= f.check_box :visible %>
+    <%= f.label :visible, "visible to public" %>
+    <br>
+
     <%= f.label :preview, "preview image (210x210px):" %>
     <%= f.file_field :preview %>
     <br>

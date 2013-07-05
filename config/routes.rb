@@ -7,7 +7,11 @@ Sam::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :projects
+  resources :projects do
+    resources :posts
+  end
+
+  resources :images
 
   #get "home/index"
 

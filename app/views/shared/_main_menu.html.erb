@@ -1,5 +1,7 @@
 <% entries = {"news" => "home", "projects" => "projects", "about me" => "about"} %>
 
+<% entries["images"] = "images" if authenticated? %>
+
 //
 <% entries.each do |text, dest| %>
   <% if current_page?(url_for(:controller => dest)) %>

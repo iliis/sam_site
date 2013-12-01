@@ -21,7 +21,8 @@ role :db,  "klamath.ch", :primary => true # This is where Rails migrations will 
 # after "deploy:restart", "deploy:cleanup"
 
 after 'deploy:update_code', 'deploy:symlink_private'
-after 'deploy', 'deploy:migrate'
+after 'deploy:update_code', 'deploy:migrate'
+after 'deploy:update_code', 'deploy:build_missing_paperclip_styles'
 
 namespace :deploy do
   task :start do ; end
@@ -42,5 +43,3 @@ namespace :deploy do
     run "cd #{release_path}; RAILS_ENV=production bundle exec rake paperclip:refresh:missing_styles"
   end
 end
-
-after "deploy:update_code", "deploy:build_missing_paperclip_styles"

@@ -31,7 +31,7 @@ module ApplicationHelper
       end
     end
 
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true, :fenced_code_bocks => true)
     markdown.render(text).html_safe
   end
 end

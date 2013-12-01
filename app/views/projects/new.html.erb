@@ -6,7 +6,7 @@
     <br>
 
     <%= f.label :state, "state: "%>
-    <%= f.select :state, options_for_select(Project.all_states, "active") %>
+    <%= f.select :state, options_for_select(Project.all_states, @project.state) %>
     <br>
 
     <%= f.check_box :visible %>

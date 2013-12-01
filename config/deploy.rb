@@ -6,12 +6,15 @@ require "bundler/capistrano"
 
 set :application, "sam"
 
+
 set :repository,  "git@github.com:iliis/sam_site.git"
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 set :deploy_to, "/home/samuel/sam"
-default_run_options[:pty] = true
+default_run_options[:pty] = true # must be set for the password prompt from git to work
+# use local ssh keys
+set :ssh_options, { :forward_agent => true }
 
 role :web, "klamath.ch"                          # Your HTTP server, Apache/etc
 role :app, "klamath.ch"                          # This may be the same as your `Web` server

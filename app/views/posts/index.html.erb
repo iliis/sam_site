@@ -1,0 +1,20 @@
+<h2>TEXT</h2>
+<% if authenticated? %>
+  <%= link_to "add post", new_post_path() %>
+  <br>
+<% end %>
+Random notes, interesting tibits, toughts, ideas, etc.
+<hr>
+
+<ul>
+<% for p in @posts %>
+  <li>
+  <h3>
+    <%= link_to p.title, p %>
+    <% unless p.visible %>
+      [hidden]
+    <% end %>
+  </h3>
+  </li>
+<% end %>
+</ul>

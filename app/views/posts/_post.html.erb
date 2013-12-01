@@ -9,7 +9,15 @@
 	<% if post.created_at != post.updated_at %>
 		- last update: <i><%= post.updated_at %></i>
 	<% end %>
-	<%= link_to "edit", edit_project_post_path(post.project, post) if authenticated? %>
+
+    <% if authenticated? %>
+      <% if post.project %>
+        <%= link_to "edit", edit_project_post_path(post.project, post) %>
+      <% else %>
+        <%= link_to "edit", edit_post_path(post) %>
+      <% end %>
+    <% end %>
+
     <% if ! post.visible? %><b>hidden</b><% end %>
 </small>
 

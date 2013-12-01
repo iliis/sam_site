@@ -1,13 +1,29 @@
-<h2>post for project '<%= @project.title %>'</h2>
+<% if @project %>
+  <h2>post for project '<%= @project.title %>'</h2>
 
-<%= form_for([@project, @post]) do |f| %>
-	<%= f.label :title, "Title:" %>
-	<%= f.text_field :title %>
-	<br>
-    <%= f.check_box :visible %>
-    <%= f.label :visible, "visible to public" %>
-    <br>
-	<%= f.text_area :content %>
-	<br>
-	<%= f.submit %>
+  <%= form_for([@project, @post]) do |f| %>
+      <%= f.label :title, "Title:" %>
+      <%= f.text_field :title %>
+      <br>
+      <%= f.check_box :visible %>
+      <%= f.label :visible, "visible to public" %>
+      <br>
+      <%= f.text_area :content %>
+      <br>
+      <%= f.submit %>
+  <% end %>
+<% else %>
+  <h2>general post without project</h2>
+
+  <%= form_for(@post) do |f| %>
+      <%= f.label :title, "Title:" %>
+      <%= f.text_field :title %>
+      <br>
+      <%= f.check_box :visible %>
+      <%= f.label :visible, "visible to public" %>
+      <br>
+      <%= f.text_area :content %>
+      <br>
+      <%= f.submit %>
+  <% end %>
 <% end %>

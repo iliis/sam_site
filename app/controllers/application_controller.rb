@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   helper_method :start_session
   helper_method :end_session
 
+  def raise_404
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
 protected
   def authenticated?
     session[:authorized]

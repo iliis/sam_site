@@ -5,6 +5,7 @@ Sam::Application.routes.draw do
   get "home"  => "home#index"
   get "about" => "about#index"
 
+  get "pubkey"=> "about#pubkey"
   get "keybase.txt" => "static#keybase"
 
   root :to => "home#index"

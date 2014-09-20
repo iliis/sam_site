@@ -7,7 +7,13 @@ body {
 
 #main {
   margin: auto auto;
-  width: 700px;
+  /*width: 700px;*/
+
+  padding-left: 10%;
+  padding-right: 10%;
+
+  min-width:  700px;
+  max-width: 1200px;
 }
 
 #header {
@@ -22,16 +28,17 @@ body {
 
 #content_left {
   width: 258px;
-  height: 600px;
-  position: absolute;
+  height: 100%;
+  /*position: absolute;*/
+  float: left;
+  margin-right: 20px;
 }
 
 #content {
-  width: 410px;
-  height: 585px;
-  position: relative;
-  left: 270px;
-  padding: 10px;
+  /*width: 410px;*/
+  /*height: 585px;*/
+  /*position: relative;*/
+  /*left: 270px;*/
 }
 
 h1, h2, h3, h4 {
